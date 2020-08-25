@@ -1,0 +1,111 @@
+  type UserFullName {
+    firstName: String!
+    middleName: String
+    lastName: String!
+  }
+
+  type User {
+    id: ID!
+    name: UserFullName
+    email: String!
+    pass: String!
+    authCode: String!
+    balance: Number!
+    StartDate: String
+    connectionSub(size: VpnSubscription): String
+    connections: [Connection]!
+    status:Boolean
+  }
+
+ type SignInParams { 
+    username: String!
+    password: String!
+  }
+
+  type Connection {
+    id: ID!
+    node: String
+    ipAddress: String
+    port: Int
+    vpnIp: String
+    vpnSub: VpnSubscription
+    server: Server
+    location: Location
+    connected: String
+    disconnected: String
+    dataTransfer: DataTransfer
+    lastSeen: String
+    event: String
+    timestamp: String
+    isAlive: Boolean!
+  }
+
+  type Location {
+    countryCode: String!
+    countryName: String
+    latitude: String!
+    longitude: String!
+  }
+
+  
+  type ConnectionLog { 
+    id: ID!
+    user: User!
+    location: Location
+    startTime: String
+    endTime: String
+    dataTransfer: DataTransfer
+  }
+
+  type Server {
+    id: ID!
+    name: String
+    hostname: String
+    port: String
+    status: Boolean
+  }
+
+  type Payment { 
+    id: ID!
+    method: String
+    datetime: String
+    amount: Float
+    status: Boolean
+  }
+
+  type DataTransfer { 
+    sent: String
+    received: String
+    lost: String
+  }
+
+  enum VpnSubscription {
+    SILVER
+    GOLD
+    PLATINUM
+  }
+
+  type Query {
+    launches(pageSize: Int, after: String): LaunchConnection!
+    launch(id: ID!): Launch
+    user(email: String!): User
+    me: User
+  }
+
+  type LaunchConnection { # add this below the Query type as an additional type.
+    cursor: String!
+    hasMore: Boolean!
+    launches: [Launch]!
+  }
+
+  type Mutation {
+    bookTrips(launchIds: [ID]!): TripUpdateResponse!
+    cancelTrip(launchId: ID!): TripUpdateResponse!
+    login(email: String): String # login token
+  }
+
+  type TripUpdateResponse {
+    success: Boolean!
+    message: String
+    launches: [Launch]
+  }

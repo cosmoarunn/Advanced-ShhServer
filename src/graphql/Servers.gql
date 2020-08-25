@@ -1,0 +1,9 @@
+query servers { 
+  servers { 
+    id
+    name
+    hostname
+    port
+    status
+  }
+}
