@@ -1,0 +1,16 @@
+{
+  "port": 3014,
+  "bind": "0.0.0.0",
+  "servers": [
+    {"id": 0, "name": "FGBS Server", "host": "0.0.0.0","man_port": 7505, "status": true },
+    {"id": 0, "name": "MIAB Server", "host": "159.203.191.34","man_port": 7505, "status": false }
+  ],
+  "username": "aeroarunn",
+  "password": "2sgpajsep2",
+  "web": {
+    "dateFormat": "HH:mm - DD.MM.YY"
+  },
+  "https": true,
+  "corsEnabled": true
+  
+}

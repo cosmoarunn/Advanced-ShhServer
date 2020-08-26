@@ -1,0 +1,4 @@
+fragment SignInParams on SignInParams {
+  email
+  password
+}

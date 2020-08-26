@@ -1,0 +1,105 @@
+{
+  "name": "ashh-server",
+  "version": "1.0.1",
+  "author": "Arun Pannerselvam",
+  "private": true,
+  "scripts": {
+    "shh:server:start": "nodemon shhserver/server/server.js",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "apollo": "vue-cli-service apollo:dev --generate-schema",
+    "apollo:schema:generate": "vue-cli-service apollo:schema:generate",
+    "apollo:schema:publish": "vue-cli-service apollo:schema:publish",
+    "apollo:start": "vue-cli-service apollo:start"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.1.3",
+    "apollo-datasource-rest": "^0.9.3",
+    "axios": "^0.19.2",
+    "bootstrap-vue": "^2.1.0",
+    "child_process": "^1.0.2",
+    "core-js": "^3.6.4",
+    "deepmerge": "^4.2.2",
+    "express-http-proxy": "^1.6.2",
+    "graphql-type-json": "^0.2.1",
+    "http-proxy-middleware": "^1.0.5",
+    "isemail": "^3.2.0",
+    "jws": "^4.0.0",
+    "lowdb": "^1.0.0",
+    "maxmind": "^4.1.4",
+    "mkdirp": "^0.5.1",
+    "nconf": "^0.10.0",
+    "node-jose": "^1.1.4",
+    "node-rsa": "^1.1.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.4",
+    "shortid": "^2.2.8",
+    "socket.io": "^2.3.0",
+    "sqlite3": "^5.0.0",
+    "vue": "^2.6.12",
+    "vue-apollo": "^3.0.0-beta.11",
+    "vue-clipboard2": "^0.3.1",
+    "vue-router": "^3.4.3",
+    "vuex": "^3.5.1",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "@vue/cli-plugin-babel": "~4.3.0",
+    "@vue/cli-plugin-eslint": "~4.3.0",
+    "@vue/cli-plugin-router": "^4.5.4",
+    "@vue/cli-plugin-unit-mocha": "^4.5.4",
+    "@vue/cli-plugin-vuex": "^4.5.4",
+    "@vue/cli-service": "~4.3.0",
+    "babel-eslint": "^10.1.0",
+    "bootstrap": "^4.5.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-graphql": "^2.1.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "graphql-tag": "^2.9.0",
+    "mutationobserver-shim": "^0.3.3",
+    "popper.js": "^1.16.0",
+    "portal-vue": "^2.1.6",
+    "reconnecting-websocket": "^4.4.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "sqlite3": "^5.0.0",
+    "vue-cli-plugin-apollo": "~0.22.2",
+    "vue-cli-plugin-bootstrap-vue": "^0.6.0",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-control-regex": 0,
+      "no-console": "off",
+      "graphql/template-strings": [
+        "error",
+        {
+          "env": "literal",
+          "projectName": "app",
+          "schemaJsonFilepath": "node_modules/.temp/graphql/schema.json"
+        }
+      ]
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "plugins": [
+      "graphql"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
