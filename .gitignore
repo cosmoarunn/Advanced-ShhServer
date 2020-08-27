@@ -38,13 +38,25 @@ bower_components
 build/Release
 
 #certificate directories
-ssh/
+/ssh
 
+#folders
+/server/lib
+
+#openvpn
+ovpn*
+openvp*
+Ovpn*
+OVpn*
+OpenVpn*
+OpenVPN*
+
+#databases
+*.sqlite
+/server/graphql/database
 
 #additionals-testfiles
 
-shhserver/server/graphql/dataSources/OpenVpnDataSource.js
-shhserver/server/graphql/resolvers/OvpnResolver.js
 shhserver/server/helpers/GeoLite2-City.mmdb
 
 
