@@ -2,7 +2,7 @@
     devServer: {
         compress: true,
         disableHostCheck: true,   
-        public: 'ovpnman.arunpanneerselvam.com'
+        public: '0.0.0.0'
     },
     
     rules: [
